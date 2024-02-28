@@ -1,12 +1,12 @@
 ## Sobre o Desafio
 
-Esse desafio será baseado na primeira edição da *Rinha de Backend*, realizada no Q3 de 2023. Créditos ao grande [Zan Franchescini](https://github.com/zanfranceschi).
-A ideia aqui é testar o seu conhecimento nos estudos de Python, portanto, é a linguagem obrigatória. É recomendado, mas não obrigatório, o uso da biblioteca [FastAPI](https://fastapi.tiangolo.com/), pela facilidade de uso.
+Esse desafio foi baseado na primeira edição da *Rinha de Backend*, realizada no Q3 de 2023. Créditos ao grande [Zan Franchescini](https://github.com/zanfranceschi).
+A ideia aqui é testar o meus conhecimento nos estudos de Python, portanto, foi a linguagem ultilizada. Teve o uso da biblioteca [FastAPI](https://fastapi.tiangolo.com/), pela facilidade de uso.
 
 ## Endpoints
-A API precisa expor 3 endpoints:
+A API tem 3 endpoints:
 
-- `POST /pessoas` – para criar um recurso pessoa.
+- `POST /pessoas` –  cria um recurso pessoa.
 - `GET /pessoas/[:id]` – para consultar um recurso criado com a requisição anterior.
 - `GET /pessoas?t=[:termo da busca]` – para fazer uma busca por pessoas.
 
@@ -23,7 +23,7 @@ Deverá aceitar uma requisição em formato JSON com os seguintes parâmetros:
 | **nascimento** | obrigatório, string para data no formato AAAA-MM-DD (ano, mês, dia). |
 | **stack** | opcional, vetor de string com cada elemento sendo obrigatório e de até 32 caracteres. |
 
-Para requisições válidas, sua API deverá retornar status code 201 - created junto com o header "Location: /pessoas/[:id]" onde [:id] é o id – em formato UUID com a versão a seu critério – da pessoa que acabou de ser criada. O conteúdo do corpo fica a seu critério; retorne o que quiser. 
+Para requisições válidas, a API retorna status code 201 - created junto com o header "Location: /pessoas/[:id]" onde [:id] é o id – em formato UUID com a versão a seu critério – da pessoa que acabou de ser criada. 
 
 Exemplos de requisições válidas:
 ```json
@@ -43,7 +43,7 @@ Exemplos de requisições válidas:
     "stack" : null
 }
 ```
-Para requisições inválidas, o status code deve ser 422 - Unprocessable Entity/Content. Aqui, novamente, o conteúdo do corpo fica a seu critério.
+Para requisições inválidas, o status code deve ser 422 - Unprocessable Entity/Content. 
 
 Exemplos de requisições inválidas:
 ```json
@@ -73,7 +73,7 @@ Exemplos de requisições inválidas:
 }
 ```
 
-Para o caso de requisições sintaticamente inválidas, a resposta deverá ter o status code para 400 - bad request. Exemplos:
+Para o caso de requisições sintaticamente inválidas, a resposta tem status code 400 - bad request. Exemplos:
 
 ```json
 {
@@ -184,14 +184,4 @@ Uma requisição `GET /pessoas?t=Python`, deveria retornar o seguinte:
 
 Se a query string `t` não for informada, a resposta deve ter seu status code para 400 - bad request com o corpo que quiser. Ou seja, informar `t` é obrigatório.
 
-## Entrega
 
-A entrega do desafio será realizada via PR neste repositório e deve ser realizada até as 10h00 do dia 14/02/2023. 
-Serão avaliados os seguintes tópicos:
-
-- Especificações da API (Endpoints, Retornos, Validações)
-- Uso do banco de dados (As querys retornam os resultados desejados?)
-- Legibilidade do código
-- Organização do código
-
-Boa sorte e bons estudos!
